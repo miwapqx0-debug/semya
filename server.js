@@ -18,11 +18,11 @@ const app = express();
 const db = openDb();
 initDb(db);
 
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
+const HOST = process.env.HOST || "0.0.0.0";
+const isProd = process.env.NODE_ENV === "production";
 
-app.listen(PORT, () => {
-  console.log(`Сервер запущен на порту ${PORT}`);
-});
+app.set("trust proxy", 1);
 
 app.use(
   helmet({
@@ -55,7 +55,8 @@ app.use(
     saveUninitialized: false,
     cookie: {
       httpOnly: true,
-      sameSite: "lax"
+      sameSite: "lax",
+      secure: isProd
     }
   })
 );
@@ -146,6 +147,11 @@ function addNotification(userId, type, payload) {
     "INSERT INTO notifications (user_id, type, payload_json, created_at) VALUES (?, ?, ?, ?)"
   ).run(userId, type, JSON.stringify(payload ?? {}), nowMs());
 }
+
+// Health check for hosting (Render, etc.)
+app.get("/api/health", (req, res) => {
+  res.json({ ok: true });
+});
 
 // ---- API: session/meta ----
 app.get("/api/me", (req, res) => {
@@ -808,12 +814,11 @@ app.get("/notifications", (req, res) => sendPage(res, "notifications.html"));
 app.get("/admin", (req, res) => sendPage(res, "admin.html"));
 app.get("/ai", (req, res) => sendPage(res, "ai.html"));
 
-app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Server running at http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Сервер запущен: http://${HOST}:${PORT} (NODE_ENV=${process.env.NODE_ENV || "development"})`);
   if (aiService.isConfigured()) {
-    console.log(`AI: enabled (${aiService.getConfig().model})`);
+    console.log(`ИИ: включён (${aiService.getConfig().model})`);
   } else {
-    console.log("AI: disabled — set OPENAI_API_KEY in .env");
+    console.log("ИИ: выключен — укажите OPENAI_API_KEY в переменных окружения");
   }
 });
