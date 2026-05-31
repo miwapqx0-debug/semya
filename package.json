@@ -1,0 +1,23 @@
+{
+  "name": "forum-diplom",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Forum project (HTML/CSS/JS + Node.js + SQLite)",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "express-session": "^1.18.1",
+    "helmet": "^7.1.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
+
