@@ -1,0 +1,4 @@
+node_modules/
+db/forum.sqlite
+.env
+public/uploads/

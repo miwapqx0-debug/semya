@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>СЕМЬЯ — Форум</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+    <link rel="stylesheet" href="/assets/ai.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <a class="brand" href="/" style="text-decoration:none">
+          <img src="/pic/logo.png" alt="СЕМЬЯ" onerror="this.style.display='none'" />
+          <div class="title">СЕМЬЯ</div>
+        </a>
+
+        <div class="search">
+          <div class="box">
+            <input id="searchInput" placeholder="Поиск по статьям…" />
+            <button class="icon-btn" id="searchBtn" type="button" title="Найти">
+              <span class="icon" style="mask-image:url('/pic/search.png');-webkit-mask-image:url('/pic/search.png')" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="icon-btn" href="/messages" title="Сообщения" id="messagesLink">
+            <span class="icon" style="mask-image:url('/pic/messages.png');-webkit-mask-image:url('/pic/messages.png')" aria-hidden="true"></span>
+          </a>
+          <a class="icon-btn" href="/notifications" title="Уведомления">
+            <span class="icon" style="mask-image:url('/pic/bell.png');-webkit-mask-image:url('/pic/bell.png')" aria-hidden="true"></span>
+          </a>
+          <a class="btn" href="/create" title="Создать">
+            <span class="icon" style="width:18px;height:18px;mask-image:url('/pic/pencil.png');-webkit-mask-image:url('/pic/pencil.png')" aria-hidden="true"></span>
+            Создать
+          </a>
+          <span id="authZone"></span>
+        </div>
+      </header>
+
+      <main class="shell">
+        <aside class="sidebar">
+          <div class="head">
+            <div class="label">
+              <span class="icon" style="mask-image:url('/pic/menu-burger.png');-webkit-mask-image:url('/pic/menu-burger.png')" aria-hidden="true"></span>
+              <span style="font-weight:800">Навигация</span>
+            </div>
+            <button class="icon-btn" id="navToggle" type="button" title="Свернуть">
+              <span class="icon" style="mask-image:url('/pic/menu.png');-webkit-mask-image:url('/pic/menu.png')" aria-hidden="true"></span>
+            </button>
+          </div>
+          <nav class="menu">
+            <a class="nav-item" href="/news">
+              <span class="icon" style="mask-image:url('/pic/news.png');-webkit-mask-image:url('/pic/news.png')" aria-hidden="true"></span>
+              <span>Новости</span>
+            </a>
+            <a class="nav-item" href="/popular">
+              <span class="icon" style="mask-image:url('/pic/popular.png');-webkit-mask-image:url('/pic/popular.png')" aria-hidden="true"></span>
+              <span>Популярное</span>
+            </a>
+            <a class="nav-item" href="/social">
+              <span class="icon" style="mask-image:url('/pic/social.png');-webkit-mask-image:url('/pic/social.png')" aria-hidden="true"></span>
+              <span>Социальные сети</span>
+            </a>
+            <a class="nav-item" href="/rules">
+              <span class="icon" style="mask-image:url('/pic/rules.png');-webkit-mask-image:url('/pic/rules.png')" aria-hidden="true"></span>
+              <span>Правила форума</span>
+            </a>
+            <a class="nav-item" href="/ai">
+              <span style="font-weight:800;width:20px;text-align:center">ИИ</span>
+              <span>ИИ-помощник</span>
+            </a>
+            <a class="nav-item" href="/profile" id="profileLink" style="display:none">
+              <span class="icon" style="mask-image:url('/pic/user.png');-webkit-mask-image:url('/pic/user.png')" aria-hidden="true"></span>
+              <span>Профиль</span>
+            </a>
+            <a class="nav-item" href="/admin" id="adminLink" style="display:none">
+              <span class="icon" style="mask-image:url('/pic/admin.png');-webkit-mask-image:url('/pic/admin.png')" aria-hidden="true"></span>
+              <span>Админ</span>
+            </a>
+          </nav>
+        </aside>
+
+        <section class="content">
+          <div class="tabs">
+            <button class="tab active" data-sort="new" type="button">
+              <span class="icon" style="mask-image:url('/pic/time.png');-webkit-mask-image:url('/pic/time.png')" aria-hidden="true"></span>
+              Новые
+            </button>
+            <button class="tab" data-sort="discussed" type="button">
+              <span class="icon" style="mask-image:url('/pic/comments.png');-webkit-mask-image:url('/pic/comments.png')" aria-hidden="true"></span>
+              Обсуждаемые
+            </button>
+            <button class="tab" data-sort="useful" type="button">
+              <span class="icon" style="mask-image:url('/pic/heart.png');-webkit-mask-image:url('/pic/heart.png')" aria-hidden="true"></span>
+              Полезные
+            </button>
+          </div>
+          <div class="list" id="postList"></div>
+        </section>
+      </main>
+
+      <footer class="footer">© 2026 ГБУ РЦ ППМС‑помощи «Семья» Оренбургской области</footer>
+    </div>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
+

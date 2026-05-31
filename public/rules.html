@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Правила форума — СЕМЬЯ</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <a class="brand" href="/" style="text-decoration:none">
+          <img src="/pic/logo.png" alt="СЕМЬЯ" onerror="this.style.display='none'" />
+          <div class="title">СЕМЬЯ</div>
+        </a>
+        <div class="search">
+          <div class="box">
+            <input id="searchInput" placeholder="Поиск по статьям…" />
+            <button class="icon-btn" id="searchBtn" type="button">
+              <span class="icon" style="mask-image:url('/pic/search.png');-webkit-mask-image:url('/pic/search.png')" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="icon-btn" href="/messages" title="Сообщения">
+            <span class="icon" style="mask-image:url('/pic/messages.png');-webkit-mask-image:url('/pic/messages.png')" aria-hidden="true"></span>
+          </a>
+          <a class="icon-btn" href="/notifications" title="Уведомления">
+            <span class="icon" style="mask-image:url('/pic/bell.png');-webkit-mask-image:url('/pic/bell.png')" aria-hidden="true"></span>
+          </a>
+          <a class="btn" href="/create">
+            <span class="icon" style="width:18px;height:18px;mask-image:url('/pic/pencil.png');-webkit-mask-image:url('/pic/pencil.png')" aria-hidden="true"></span>
+            Создать
+          </a>
+          <span id="authZone"></span>
+        </div>
+      </header>
+
+      <main class="shell">
+        <aside class="sidebar">
+          <div class="head">
+            <div class="label">
+              <span class="icon" style="mask-image:url('/pic/menu-burger.png');-webkit-mask-image:url('/pic/menu-burger.png')" aria-hidden="true"></span>
+              <span style="font-weight:800">Навигация</span>
+            </div>
+            <button class="icon-btn" id="navToggle" type="button">
+              <span class="icon" style="mask-image:url('/pic/menu.png');-webkit-mask-image:url('/pic/menu.png')" aria-hidden="true"></span>
+            </button>
+          </div>
+          <nav class="menu">
+            <a class="nav-item" href="/news">
+              <span class="icon" style="mask-image:url('/pic/news.png');-webkit-mask-image:url('/pic/news.png')" aria-hidden="true"></span>
+              <span>Новости</span>
+            </a>
+            <a class="nav-item" href="/popular">
+              <span class="icon" style="mask-image:url('/pic/popular.png');-webkit-mask-image:url('/pic/popular.png')" aria-hidden="true"></span>
+              <span>Популярное</span>
+            </a>
+            <a class="nav-item" href="/social">
+              <span class="icon" style="mask-image:url('/pic/social.png');-webkit-mask-image:url('/pic/social.png')" aria-hidden="true"></span>
+              <span>Социальные сети</span>
+            </a>
+            <a class="nav-item" href="/rules">
+              <span class="icon" style="mask-image:url('/pic/rules.png');-webkit-mask-image:url('/pic/rules.png')" aria-hidden="true"></span>
+              <span>Правила форума</span>
+            </a>
+            <a class="nav-item" href="/profile" id="profileLink" style="display:none">
+              <span class="icon" style="mask-image:url('/pic/user.png');-webkit-mask-image:url('/pic/user.png')" aria-hidden="true"></span>
+              <span>Профиль</span>
+            </a>
+            <a class="nav-item" href="/admin" id="adminLink" style="display:none">
+              <span class="icon" style="mask-image:url('/pic/admin.png');-webkit-mask-image:url('/pic/admin.png')" aria-hidden="true"></span>
+              <span>Админ</span>
+            </a>
+          </nav>
+        </aside>
+
+        <section class="content">
+          <div class="card">
+            <div style="font-weight:800; font-size:18px; margin-bottom:10px">Правила общения</div>
+            <div style="line-height:1.55" class="muted">
+              Вступая в сообщество, оставляя комментарии, вы автоматически соглашаетесь с правилами общения и модерации сообщений.
+              Все комментарии проходят модерацию.
+            </div>
+            <div style="height:10px"></div>
+            <ul style="margin:0; padding-left:18px; line-height:1.6">
+              <li>Спам</li>
+              <li>Флуд (многократное повторение комментария с одинаковым смыслом)</li>
+              <li>Комментарии, несоответствующие теме публикации и обсуждения</li>
+              <li>Ненормативная лексика, оскорбления и провокации</li>
+              <li>Реклама и ссылки на сторонние ресурсы</li>
+            </ul>
+            <div style="height:12px"></div>
+            <div class="muted">По вопросам модерации и работы сайта можно связаться с администратором через уведомления/сообщения.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">© 2026 ГБУ РЦ ППМС‑помощи «Семья» Оренбургской области</footer>
+    </div>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
+

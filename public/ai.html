@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ИИ-помощник — СЕМЬЯ</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+    <link rel="stylesheet" href="/assets/ai.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <a class="brand" href="/" style="text-decoration:none">
+          <img src="/pic/logo.png" alt="СЕМЬЯ" onerror="this.style.display='none'" />
+          <div class="title">СЕМЬЯ</div>
+        </a>
+        <div class="search">
+          <div class="box">
+            <input id="searchInput" placeholder="Поиск по статьям…" />
+            <button class="icon-btn" id="searchBtn" type="button">
+              <span class="icon" style="mask-image:url('/pic/search.png');-webkit-mask-image:url('/pic/search.png')" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn ghost" href="/">На главную</a>
+          <span id="authZone"></span>
+        </div>
+      </header>
+
+      <main class="shell" style="grid-template-columns:1fr">
+        <section class="content" id="aiPageRoot"></section>
+      </main>
+
+      <footer class="footer">© 2026 ГБУ РЦ ППМС‑помощи «Семья» Оренбургской области</footer>
+    </div>
+    <script src="/assets/app.js"></script>
+    <script src="/assets/ai.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        await initShell();
+        initAi();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Создать пост — СЕМЬЯ</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+    <link rel="stylesheet" href="/assets/ai.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <a class="brand" href="/" style="text-decoration:none">
+          <img src="/pic/logo.png" alt="СЕМЬЯ" onerror="this.style.display='none'" />
+          <div class="title">СЕМЬЯ</div>
+        </a>
+        <div class="search">
+          <div class="box">
+            <input id="searchInput" placeholder="Поиск по статьям…" />
+            <button class="icon-btn" id="searchBtn" type="button">
+              <span class="icon" style="mask-image:url('/pic/search.png');-webkit-mask-image:url('/pic/search.png')" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="icon-btn" href="/messages" title="Сообщения">
+            <span class="icon" style="mask-image:url('/pic/messages.png');-webkit-mask-image:url('/pic/messages.png')" aria-hidden="true"></span>
+          </a>
+          <a class="icon-btn" href="/notifications" title="Уведомления">
+            <span class="icon" style="mask-image:url('/pic/bell.png');-webkit-mask-image:url('/pic/bell.png')" aria-hidden="true"></span>
+          </a>
+          <span id="authZone"></span>
+        </div>
+      </header>
+
+      <main class="shell">
+        <aside class="sidebar">
+          <div class="head">
+            <div class="label">
+              <span class="icon" style="mask-image:url('/pic/menu-burger.png');-webkit-mask-image:url('/pic/menu-burger.png')" aria-hidden="true"></span>
+              <span style="font-weight:800">Навигация</span>
+            </div>
+            <button class="icon-btn" id="navToggle" type="button">
+              <span class="icon" style="mask-image:url('/pic/menu.png');-webkit-mask-image:url('/pic/menu.png')" aria-hidden="true"></span>
+            </button>
+          </div>
+          <nav class="menu">
+            <a class="nav-item" href="/news">
+              <span class="icon" style="mask-image:url('/pic/news.png');-webkit-mask-image:url('/pic/news.png')" aria-hidden="true"></span>
+              <span>Новости</span>
+            </a>
+            <a class="nav-item" href="/popular">
+              <span class="icon" style="mask-image:url('/pic/popular.png');-webkit-mask-image:url('/pic/popular.png')" aria-hidden="true"></span>
+              <span>Популярное</span>
+            </a>
+            <a class="nav-item" href="/social">
+              <span class="icon" style="mask-image:url('/pic/social.png');-webkit-mask-image:url('/pic/social.png')" aria-hidden="true"></span>
+              <span>Социальные сети</span>
+            </a>
+            <a class="nav-item" href="/rules">
+              <span class="icon" style="mask-image:url('/pic/rules.png');-webkit-mask-image:url('/pic/rules.png')" aria-hidden="true"></span>
+              <span>Правила форума</span>
+            </a>
+            <a class="nav-item" href="/profile" id="profileLink" style="display:none">
+              <span class="icon" style="mask-image:url('/pic/user.png');-webkit-mask-image:url('/pic/user.png')" aria-hidden="true"></span>
+              <span>Профиль</span>
+            </a>
+            <a class="nav-item" href="/admin" id="adminLink" style="display:none">
+              <span class="icon" style="mask-image:url('/pic/admin.png');-webkit-mask-image:url('/pic/admin.png')" aria-hidden="true"></span>
+              <span>Админ</span>
+            </a>
+          </nav>
+        </aside>
+
+        <section class="content">
+          <div class="card" style="width:min(860px, 100%); margin:0 auto">
+            <div style="font-weight:800; font-size:18px; margin-bottom:10px">Создать</div>
+            <form id="createForm" enctype="multipart/form-data">
+              <div class="field">
+                <label>Заголовок</label>
+                <input class="input" id="title" maxlength="120" />
+              </div>
+              <div class="field">
+                <label>Текст</label>
+                <textarea class="input" id="body" rows="10"></textarea>
+                <div class="hint">Минимум 3 символа, если нет картинки</div>
+                <div class="ai-actions">
+                  <button type="button" class="btn ghost" id="aiImprovePost">Улучшить текст с ИИ</button>
+                  <button type="button" class="btn ghost" id="aiSuggestTitle">Предложить заголовок (ИИ)</button>
+                </div>
+              </div>
+              <div class="field">
+                <label>Картинка (необязательно)</label>
+                <input class="input" id="postImage" type="file" accept="image/*" />
+                <div class="hint">PNG/JPG до 5MB</div>
+              </div>
+              <div class="error" id="createError"></div>
+              <div style="display:flex; justify-content:flex-end; gap:10px">
+                <a class="btn ghost" href="/">Отмена</a>
+                <button class="btn primary" type="submit">Опубликовать</button>
+              </div>
+            </form>
+            <div style="height:8px"></div>
+            <div class="muted">После публикации пост появится в ленте, а лайки/комментарии начнут приходить в уведомления.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">© 2026 ГБУ РЦ ППМС‑помощи «Семья» Оренбургской области</footer>
+    </div>
+    <script src="/assets/app.js"></script>
+    <script src="/assets/ai.js"></script>
+  </body>
+</html>
+

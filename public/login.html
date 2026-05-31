@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Вход — СЕМЬЯ</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <a class="brand" href="/" style="text-decoration:none">
+          <img src="/pic/logo.png" alt="СЕМЬЯ" onerror="this.style.display='none'" />
+          <div class="title">СЕМЬЯ</div>
+        </a>
+        <div class="search">
+          <div class="box">
+            <input id="searchInput" placeholder="Поиск по статьям…" />
+            <button class="icon-btn" id="searchBtn" type="button">
+              <span class="icon" style="mask-image:url('/pic/search.png');-webkit-mask-image:url('/pic/search.png')" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn ghost" href="/">На главную</a>
+        </div>
+      </header>
+
+      <main class="shell" style="grid-template-columns:1fr; place-items:center">
+        <section class="content" style="width:min(560px, 100%)">
+          <div class="card">
+            <div style="font-weight:800; font-size:20px; text-align:center; margin-bottom:12px">Вход</div>
+            <form id="loginForm">
+              <div class="field">
+                <label>Имя пользователя или эл. почта</label>
+                <input class="input" id="login" autocomplete="username" />
+              </div>
+              <div class="field">
+                <label>Пароль</label>
+                <input class="input" id="password" type="password" autocomplete="current-password" />
+              </div>
+              <div id="formError"></div>
+              <div style="display:flex; justify-content:center; margin-top:10px">
+                <button class="btn primary" type="submit">Войти</button>
+              </div>
+            </form>
+            <div style="height:10px"></div>
+            <div style="text-align:center" class="muted">Нет аккаунта? <a href="/register">Зарегистрироваться</a></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">© 2026 ГБУ РЦ ППМС‑помощи «Семья» Оренбургской области</footer>
+    </div>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
+
