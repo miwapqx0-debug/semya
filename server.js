@@ -18,8 +18,11 @@ const app = express();
 const db = openDb();
 initDb(db);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on ${port}`));
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Сервер запущен на порту ${PORT}`);
+});
 
 app.use(
   helmet({
